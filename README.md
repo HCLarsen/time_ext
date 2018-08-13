@@ -55,4 +55,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [your-github-user](https://github.com/your-github-user) Chris Larsen - creator, maintainer
+- [HCLarsen](https://github.com/HCLarsen) Chris Larsen - creator, maintainer
