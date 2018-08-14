@@ -11,9 +11,11 @@ struct Time
       month -= 12
       year += 1
     end
-    if day > DAYS_MONTH[month]
+    if day > DAYS_MONTH[self.month]
       day -= DAYS_MONTH[month]
       month += 1
+    elsif day > DAYS_MONTH[month]
+      day = DAYS_MONTH[month]
     end
     if hour > 24
       hour -= 24

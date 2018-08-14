@@ -16,9 +16,21 @@ class TimeIntervalTest < Minitest::Test
   end
 
   def test_adds_days
+    time = Time.new(2018, 6, 30, 15, 0, 0)
+    interval = Time::Interval.new(0, 0, 1, 0, 0, 0)
+    assert_equal Time.new(2018, 7, 1, 15, 0, 0), time + interval
+  end
+
+  def test_adds_months
+    time = Time.new(2018, 6, 30, 15, 0, 0)
+    interval = Time::Interval.new(0, 1, 0, 0, 0, 0)
+    assert_equal Time.new(2018, 7, 30, 15, 0, 0), time + interval
+  end
+
+  def test_corrects_for_shorter_months
     time = Time.new(2018, 10, 31, 15, 0, 0)
-    interval = Time::Interval.new(0, 0, 7, 0, 0, 0)
-    assert_equal Time.new(2018, 11, 7, 15, 0, 0), time + interval
+    interval = Time::Interval.new(0, 1, 0, 0, 0, 0)
+    assert_equal Time.new(2018, 11, 30, 15, 0, 0), time + interval
   end
 
   def test_corrects_hours_over_24
