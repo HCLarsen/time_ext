@@ -22,9 +22,8 @@ require "time_ext"
 
 Creating an Interval instance:
 
-Time::Interval.new(5, 0, 0, 0, 0, 0)  #=> 5 years
-Time::Interval.new(0, 0, 3, 0, 0, 0)  #=> 3 days
-Time::Interval.new(12, 0, 0)  #=> 12 hours
+Time::Interval.new(5, 0, 0)  #=> 5 years
+Time::Interval.new(0, 0, 3)  #=> 3 days
 
 Integer convenience methods:
 
