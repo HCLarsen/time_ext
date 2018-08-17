@@ -19,3 +19,21 @@ struct Time::Interval
     @days
   end
 end
+
+struct Int
+  def days : Time::Interval
+    Time::Interval.new(0, 0, self)
+  end
+
+  def weeks
+    Time::Interval.new(0, 0, self * 7)
+  end
+
+  def months
+    Time::Interval.new(0, self, 0)
+  end
+
+  def years
+    Time::Interval.new(self, 0, 0)
+  end
+end
