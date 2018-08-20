@@ -4,6 +4,8 @@ Extends the functionality of the core Time object by adding a date specific span
 
 This library also overrides some of the convenience methods to the Int object, to return Interval instead of Span objects for Int#days, Int#weeks, Int#months, and Int#years.
 
+NOTE: This library is just a rough draft. This functionality is being added to the Crystal core library.
+
 ## Installation
 
 Add this to your application's `shard.yml`:
