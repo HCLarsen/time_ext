@@ -1,8 +1,8 @@
 struct Time
-  def +(interval : Time::Interval)
-    year = self.year + interval.years
-    month = self.month + interval.months
-    day = self.day + interval.days
+  def +(date_span : Time::DateSpan)
+    year = self.year + date_span.years
+    month = self.month + date_span.months
+    day = self.day + date_span.days
 
     if month > 12
       month -= 12
@@ -17,10 +17,10 @@ struct Time
     Time.new(year, month, day, self.hour, self.minute, self.second)
   end
 
-  def -(interval : Time::Interval)
-    year = self.year - interval.years
-    month = self.month - interval.months
-    day = self.day - interval.days
+  def -(date_span : Time::DateSpan)
+    year = self.year - date_span.years
+    month = self.month - date_span.months
+    day = self.day - date_span.days
 
     if month < 0
       year -= 1

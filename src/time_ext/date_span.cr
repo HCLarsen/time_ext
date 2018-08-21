@@ -1,4 +1,4 @@
-struct Time::Interval
+struct Time::DateSpan
   @months : Int32
   @days : Int32
 
@@ -21,19 +21,19 @@ struct Time::Interval
 end
 
 struct Int
-  def days : Time::Interval
-    Time::Interval.new(0, 0, self)
+  def days : Time::DateSpan
+    Time::DateSpan.new(0, 0, self)
   end
 
   def weeks
-    Time::Interval.new(0, 0, self * 7)
+    Time::DateSpan.new(0, 0, self * 7)
   end
 
   def months
-    Time::Interval.new(0, self, 0)
+    Time::DateSpan.new(0, self, 0)
   end
 
   def years
-    Time::Interval.new(self, 0, 0)
+    Time::DateSpan.new(self, 0, 0)
   end
 end

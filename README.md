@@ -1,8 +1,8 @@
 # time_ext
 
-Extends the functionality of the core Time object by adding a date specific span object called Interval. Whereas Time::Span represents a passage of time specified by seconds, Time::Interval represents a passage of time represented by months, days and seconds. With this, a developer can represent a specific number of days, regardless of a Daylight Savings Time shift, or a number of a months, regardless of any leap days that may be in between.
+Extends the functionality of the core Time object by adding a date specific span object called DateSpan. Whereas Time::Span represents a passage of time specified by seconds, Time::DateSpan represents a passage of time represented by months, days and seconds. With this, a developer can represent a specific number of days, regardless of a Daylight Savings Time shift, or a number of a months, regardless of any leap days that may be in between.
 
-This library also overrides some of the convenience methods to the Int object, to return Interval instead of Span objects for Int#days, Int#weeks, Int#months, and Int#years.
+This library also overrides some of the convenience methods to the Int object, to return DateSpan instead of Span objects for Int#days, Int#weeks, Int#months, and Int#years.
 
 NOTE: This library is just a rough draft. This functionality is being added to the Crystal core library.
 
@@ -22,19 +22,19 @@ dependencies:
 require "time_ext"
 ```
 
-Creating an Interval instance:
+Creating an DateSpan instance:
 
-Time::Interval.new(5, 0, 0)  #=> 5 years
-Time::Interval.new(0, 0, 3)  #=> 3 days
+Time::DateSpan.new(5, 0, 0)  #=> 5 years
+Time::DateSpan.new(0, 0, 3)  #=> 3 days
 
 Integer convenience methods:
 
 ```crystal
 72.hours  #=> 3.00:00:00 Time::Span
-3.days    #=> 3.00:00:00 Time::Interval
+3.days    #=> 3.00:00:00 Time::DateSpan
 ```
 
-Adding Spans and Intervals to a Time instance:
+Adding Spans and DateSpans to a Time instance:
 
 ```crystal
 time = Time.new(2018, 11, 3, 9, 0, 0)
