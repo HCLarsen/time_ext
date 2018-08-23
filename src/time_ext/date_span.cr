@@ -15,6 +15,10 @@ struct Time::DateSpan
     @months % 12
   end
 
+  def total_months
+    @months
+  end
+
   def days
     @days
   end
