@@ -9,16 +9,9 @@ describe Time::DateSpan do
   end
 
   it "should generate from Int" do
-    days = 20.days
-    days.should eq(Time::DateSpan.new(0, 0, 20))
-
-    weeks = 4.weeks
-    weeks.should eq(Time::DateSpan.new(0, 0, 28))
-
-    months = 6.months
-    months.should eq(Time::DateSpan.new(0, 6, 0))
-
-    years = 10.years
-    years.should eq(Time::DateSpan.new(10, 0, 0))
+    20.days.should eq(Time::DateSpan.new(0, 0, 20))
+    4.weeks.should eq(Time::DateSpan.new(0, 0, 28))
+    6.months.should eq(Time::DateSpan.new(0, 6, 0))
+    10.years.should eq(Time::DateSpan.new(10, 0, 0))
   end
 end
